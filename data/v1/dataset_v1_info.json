@@ -1,0 +1,78 @@
+{
+  "dataset_version": "dataset-v1",
+  "total_examples": 1994,
+  "train_count": 1296,
+  "validation_count": 300,
+  "test_count": 398,
+  "train_ratio": 0.65,
+  "validation_ratio": 0.15,
+  "test_ratio": 0.2,
+  "intents": [
+    "account_issue",
+    "complaint",
+    "general_question",
+    "human_request",
+    "other",
+    "pricing",
+    "product_question",
+    "refund",
+    "sales",
+    "technical_support"
+  ],
+  "intent_distribution": {
+    "technical_support": 394,
+    "general_question": 382,
+    "refund": 135,
+    "account_issue": 151,
+    "other": 94,
+    "product_question": 136,
+    "pricing": 239,
+    "human_request": 104,
+    "complaint": 205,
+    "sales": 154
+  },
+  "train_intent_distribution": {
+    "account_issue": 98,
+    "pricing": 155,
+    "technical_support": 256,
+    "refund": 88,
+    "complaint": 133,
+    "general_question": 248,
+    "human_request": 68,
+    "product_question": 89,
+    "sales": 100,
+    "other": 61
+  },
+  "validation_intent_distribution": {
+    "pricing": 36,
+    "complaint": 31,
+    "other": 14,
+    "account_issue": 23,
+    "sales": 23,
+    "refund": 20,
+    "general_question": 58,
+    "technical_support": 59,
+    "human_request": 16,
+    "product_question": 20
+  },
+  "test_intent_distribution": {
+    "technical_support": 79,
+    "general_question": 76,
+    "refund": 27,
+    "sales": 31,
+    "complaint": 41,
+    "pricing": 48,
+    "product_question": 27,
+    "account_issue": 30,
+    "human_request": 20,
+    "other": 19
+  },
+  "escalation_distribution": {
+    "false": 1593,
+    "true": 401
+  },
+  "overlap_train_val": 0,
+  "overlap_train_test": 0,
+  "overlap_val_test": 0,
+  "random_seed": 42
+}

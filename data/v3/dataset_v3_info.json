@@ -1,0 +1,103 @@
+{
+  "dataset_version": "dataset-v3",
+  "total_examples": 3726,
+  "v1_examples_carried_over": 398,
+  "random_seed": 42,
+  "splits": {
+    "train": {
+      "count": 2329,
+      "intents": {
+        "refund": 141,
+        "complaint": 208,
+        "technical_support": 522,
+        "general_question": 540,
+        "sales": 157,
+        "account_issue": 166,
+        "pricing": 271,
+        "product_question": 143,
+        "human_request": 102,
+        "other": 79
+      },
+      "escalation": {
+        "true": 475,
+        "false": 1854
+      }
+    },
+    "validation": {
+      "count": 499,
+      "intents": {
+        "account_issue": 36,
+        "human_request": 22,
+        "sales": 34,
+        "refund": 30,
+        "general_question": 115,
+        "complaint": 44,
+        "technical_support": 112,
+        "other": 17,
+        "pricing": 58,
+        "product_question": 31
+      },
+      "escalation": {
+        "false": 404,
+        "true": 95
+      }
+    },
+    "test": {
+      "count": 698,
+      "intents": {
+        "general_question": 159,
+        "human_request": 30,
+        "sales": 50,
+        "technical_support": 158,
+        "product_question": 40,
+        "complaint": 67,
+        "account_issue": 50,
+        "pricing": 78,
+        "refund": 41,
+        "other": 25
+      },
+      "escalation": {
+        "false": 558,
+        "true": 140
+      }
+    },
+    "benchmark": {
+      "count": 200,
+      "intents": {
+        "complaint": 19,
+        "product_question": 17,
+        "pricing": 28,
+        "refund": 16,
+        "technical_support": 33,
+        "sales": 15,
+        "account_issue": 16,
+        "other": 11,
+        "general_question": 33,
+        "human_request": 12
+      },
+      "escalation": {
+        "false": 158,
+        "true": 42
+      }
+    }
+  },
+  "intent_distribution": {
+    "general_question": 847,
+    "account_issue": 268,
+    "technical_support": 825,
+    "pricing": 435,
+    "product_question": 231,
+    "complaint": 338,
+    "refund": 228,
+    "human_request": 166,
+    "other": 132,
+    "sales": 256
+  },
+  "escalation_distribution": {
+    "false": 2974,
+    "true": 752
+  },
+  "near_duplicates_found": 8,
+  "v1_test_leakage": 398,
+  "v1_test_near_duplicate_leakage": 446
+}

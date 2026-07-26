@@ -1,0 +1,114 @@
+{
+  "model_version": "intent-v1",
+  "dataset_version": "dataset-v1",
+  "training_date": "2026-07-25T18:07:15.077154",
+  "random_seed": 42,
+  "classes": [
+    "account_issue",
+    "complaint",
+    "general_question",
+    "human_request",
+    "other",
+    "pricing",
+    "product_question",
+    "refund",
+    "sales",
+    "technical_support"
+  ],
+  "validation_accuracy": 0.6533,
+  "validation_classification_report": {
+    "account_issue": {
+      "precision": 0.75,
+      "recall": 0.6521739130434783,
+      "f1-score": 0.6976744186046512,
+      "support": 23.0
+    },
+    "complaint": {
+      "precision": 0.6086956521739131,
+      "recall": 0.45161290322580644,
+      "f1-score": 0.5185185185185185,
+      "support": 31.0
+    },
+    "general_question": {
+      "precision": 0.589041095890411,
+      "recall": 0.7413793103448276,
+      "f1-score": 0.6564885496183206,
+      "support": 58.0
+    },
+    "human_request": {
+      "precision": 0.8333333333333334,
+      "recall": 0.625,
+      "f1-score": 0.7142857142857143,
+      "support": 16.0
+    },
+    "other": {
+      "precision": 0.6666666666666666,
+      "recall": 0.14285714285714285,
+      "f1-score": 0.23529411764705882,
+      "support": 14.0
+    },
+    "pricing": {
+      "precision": 0.7575757575757576,
+      "recall": 0.6944444444444444,
+      "f1-score": 0.7246376811594203,
+      "support": 36.0
+    },
+    "product_question": {
+      "precision": 0.6,
+      "recall": 0.3,
+      "f1-score": 0.4,
+      "support": 20.0
+    },
+    "refund": {
+      "precision": 0.7727272727272727,
+      "recall": 0.85,
+      "f1-score": 0.8095238095238095,
+      "support": 20.0
+    },
+    "sales": {
+      "precision": 0.631578947368421,
+      "recall": 0.5217391304347826,
+      "f1-score": 0.5714285714285714,
+      "support": 23.0
+    },
+    "technical_support": {
+      "precision": 0.611764705882353,
+      "recall": 0.8813559322033898,
+      "f1-score": 0.7222222222222222,
+      "support": 59.0
+    },
+    "accuracy": 0.6533333333333333,
+    "macro avg": {
+      "precision": 0.6821383431618129,
+      "recall": 0.5860562776553871,
+      "f1-score": 0.6050073603008287,
+      "support": 300.0
+    },
+    "weighted avg": {
+      "precision": 0.6609944053650235,
+      "recall": 0.6533333333333333,
+      "f1-score": 0.6365033720721915,
+      "support": 300.0
+    }
+  },
+  "training_time_seconds": 1.08,
+  "train_examples": 1296,
+  "validation_examples": 300,
+  "pipeline": {
+    "tfidf": {
+      "max_features": 5000,
+      "ngram_range": "(1, 2)",
+      "sublinear_tf": true,
+      "min_df": 2,
+      "max_df": 0.95,
+      "stop_words": "english"
+    },
+    "classifier": {
+      "type": "LogisticRegression",
+      "C": 1.0,
+      "max_iter": 1000,
+      "multi_class": "multinomial",
+      "solver": "lbfgs"
+    }
+  }
+}

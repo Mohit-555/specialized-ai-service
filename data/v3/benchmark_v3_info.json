@@ -1,0 +1,38 @@
+{
+  "benchmark_version": "benchmark-v3",
+  "description": "Frozen benchmark set for V3 evaluation. Do NOT use for training.",
+  "total_examples": 200,
+  "intent_distribution": {
+    "complaint": 19,
+    "product_question": 17,
+    "pricing": 28,
+    "refund": 16,
+    "technical_support": 33,
+    "sales": 15,
+    "account_issue": 16,
+    "other": 11,
+    "general_question": 33,
+    "human_request": 12
+  },
+  "escalation_distribution": {
+    "false": 158,
+    "true": 42
+  },
+  "tag_distribution": {
+    "hard_negative_escalation": 20,
+    "multi_intent": 16,
+    "standard": 50,
+    "hinglish": 70,
+    "noisy": 28,
+    "negation": 9,
+    "escalation_positive": 7,
+    "human_request": 7,
+    "technical": 8,
+    "sales": 3,
+    "complaint": 3,
+    "resolution_state": 5,
+    "confusion_pair": 10,
+    "other": 2,
+    "pricing": 6
+  }
+}

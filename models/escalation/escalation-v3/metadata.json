@@ -1,0 +1,18 @@
+{
+  "model_version": "escalation-v3",
+  "dataset_version": "dataset-v3",
+  "embedding_model": "all-MiniLM-L6-v2",
+  "training_date": "2026-07-26T00:24:51.108866",
+  "random_seed": 42,
+  "validation_escalation_positive": 95,
+  "validation_escalation_negative": 404,
+  "best_threshold": 0.35,
+  "best_f1": 0.732,
+  "train_examples": 2329,
+  "validation_examples": 499,
+  "classifier_params": {
+    "C": 1.0,
+    "max_iter": 1000,
+    "solver": "lbfgs"
+  }
+}
