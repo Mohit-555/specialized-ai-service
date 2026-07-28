@@ -1,9 +1,11 @@
+import asyncio
 import logging
 from contextlib import asynccontextmanager
 
 from fastapi import FastAPI, Request
 from fastapi.responses import JSONResponse
 
+from ai_service.app.config import CLASSIFICATION_REQUEST_TIMEOUT
 from ai_service.app.schemas import (
     ClassifyRequest,
     ClassifyResponse,
@@ -31,6 +33,7 @@ async def lifespan(app: FastAPI):
         logger.warning("Models failed to load")
     yield
     logger.info("Shutting down...")
+    classifier_service.shutdown()
 
 
 app = FastAPI(
@@ -81,20 +84,48 @@ async def classify(request: ClassifyRequest):
             content={"error": "Bad request", "detail": "Text exceeds maximum length of 5000 characters"},
         )
 
-    intent_result = classifier_service.predict_intent(text)
-    escalation_result = classifier_service.predict_escalation(text)
+    if classifier_service.semaphore.locked():
+        return JSONResponse(
+            status_code=503,
+            content={
+                "error": "Service at capacity",
+                "detail": "Too many concurrent classification requests. Try again later.",
+            },
+        )
+
+    await classifier_service.semaphore.acquire()
+    try:
+        loop = asyncio.get_running_loop()
+        result = await asyncio.wait_for(
+            loop.run_in_executor(
+                classifier_service.executor,
+                classifier_service.classify_sync,
+                text,
+            ),
+            timeout=CLASSIFICATION_REQUEST_TIMEOUT,
+        )
+    except asyncio.TimeoutError:
+        return JSONResponse(
+            status_code=503,
+            content={
+                "error": "Request timeout",
+                "detail": f"Classification did not complete within {CLASSIFICATION_REQUEST_TIMEOUT}s.",
+            },
+        )
+    finally:
+        classifier_service.semaphore.release()
 
     return ClassifyResponse(
-        intent=intent_result.intent,
-        intent_confidence=intent_result.confidence,
-        escalation_required=escalation_result.required,
-        escalation_confidence=escalation_result.confidence,
+        intent=result.intent,
+        intent_confidence=result.intent_confidence,
+        escalation_required=result.escalation_required,
+        escalation_confidence=result.escalation_confidence,
         model_version=ModelVersion(
-            intent=classifier_service.intent_model_version,
-            escalation=classifier_service.escalation_model_version,
+            intent=result.model_version_intent,
+            escalation=result.model_version_escalation,
         ),
         top_intents=[
             IntentPrediction(intent=t["intent"], confidence=t["confidence"])
-            for t in intent_result.top_intents
+            for t in result.top_intents
         ],
     )

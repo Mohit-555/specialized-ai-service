@@ -8,6 +8,10 @@ ESCALATION_MODEL_VERSION = os.environ.get("ESCALATION_MODEL_VERSION", "escalatio
 IS_V4 = "v4" in INTENT_MODEL_VERSION or "v4" in ESCALATION_MODEL_VERSION
 IS_V2 = (INTENT_MODEL_VERSION.endswith("-v2") or ESCALATION_MODEL_VERSION.endswith("-v2")) and not IS_V4
 
+CLASSIFICATION_MAX_WORKERS = int(os.environ.get("CLASSIFICATION_MAX_WORKERS", "2"))
+CLASSIFICATION_MAX_INFLIGHT = int(os.environ.get("CLASSIFICATION_MAX_INFLIGHT", "6"))
+CLASSIFICATION_REQUEST_TIMEOUT = float(os.environ.get("CLASSIFICATION_REQUEST_TIMEOUT", "30.0"))
+
 def _model_path(version):
     if version.startswith("intent"):
         sub = "intent"

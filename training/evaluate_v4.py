@@ -3,6 +3,7 @@
 
 import argparse
 import csv
+import inspect
 import json
 import os
 import re
@@ -89,12 +90,18 @@ def load_v4_escalation_model(candidate):
     return tokenizer, model
 
 
+def _accepts_token_type_ids(model):
+    return "token_type_ids" in inspect.signature(model.forward).parameters
+
+
 @torch.no_grad()
 def predict_intent_batch(tokenizer, model, texts, batch_size=32):
     all_probs = []
     for i in range(0, len(texts), batch_size):
         batch = texts[i:i + batch_size]
         enc = tokenizer(batch, truncation=True, padding=True, max_length=128, return_tensors="pt")
+        if "token_type_ids" in enc and not _accepts_token_type_ids(model):
+            enc.pop("token_type_ids")
         logits = model(**enc).logits
         probs = torch.softmax(logits, dim=-1).cpu().numpy()
         all_probs.append(probs)
@@ -107,6 +114,8 @@ def predict_escalation_batch(tokenizer, model, texts, batch_size=32):
     for i in range(0, len(texts), batch_size):
         batch = texts[i:i + batch_size]
         enc = tokenizer(batch, truncation=True, padding=True, max_length=128, return_tensors="pt")
+        if "token_type_ids" in enc and not _accepts_token_type_ids(model):
+            enc.pop("token_type_ids")
         logits = model(**enc).logits
         probs = torch.sigmoid(logits).squeeze(-1).cpu().numpy()
         all_probs.append(probs)
