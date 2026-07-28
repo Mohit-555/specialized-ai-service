@@ -1,0 +1,30 @@
+{
+  "model_version": "escalation-v4-en",
+  "dataset_version": "dataset-v3",
+  "base_model": "distilbert-base-uncased",
+  "training_date": "2026-07-27T08:46:58.796773",
+  "num_epochs_trained": 6,
+  "best_val_accuracy": 0.9459,
+  "best_val_f1": 0.8629,
+  "per_class_f1": {
+    "negative": 0.9663,
+    "positive": 0.8629
+  },
+  "train_examples": 2329,
+  "validation_examples": 499,
+  "benchmark_examples": 200,
+  "training_time_seconds": 118.8,
+  "early_stopped_at_epoch": 5,
+  "random_seed": 42,
+  "max_seq_length": 128,
+  "batch_size": 16,
+  "learning_rate": 2e-05,
+  "weight_decay": 0.01,
+  "warmup_steps": 87,
+  "num_epochs_config": 6,
+  "early_stopping_patience": 2,
+  "evaluation_strategy": "epoch",
+  "pos_weight_used": 3.9032,
+  "best_threshold": 0.65,
+  "best_f1_at_best_threshold": 0.866
+}

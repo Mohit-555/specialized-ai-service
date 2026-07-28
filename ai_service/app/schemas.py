@@ -1,11 +1,10 @@
-from pydantic import BaseModel, Field, field_validator
+from pydantic import BaseModel, Field, validator
 
 
 class ClassifyRequest(BaseModel):
     text: str = Field(..., min_length=1, max_length=5000)
 
-    @field_validator("text")
-    @classmethod
+    @validator("text")
     def text_must_be_valid(cls, v: str) -> str:
         stripped = v.strip()
         if not stripped:

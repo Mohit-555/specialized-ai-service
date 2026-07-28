@@ -23,3 +23,5 @@ scheduler.pt
 training_args.bin
 experiments/
 evaluations/
+v4_release/
+*.tar.gz
