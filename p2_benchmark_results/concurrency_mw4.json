@@ -1,0 +1,85 @@
+{
+  "max_workers": 4,
+  "concurrency_benchmark": {
+    "1": {
+      "duration_sec": 15.3,
+      "requests_per_sec": 6.5,
+      "successful": 100,
+      "errors": 0,
+      "timeouts": 0,
+      "latency": {
+        "p50": 146.95,
+        "p95": 190.83,
+        "p99": 234.31,
+        "mean": 153.18,
+        "min": 118.79,
+        "max": 234.31
+      },
+      "rss_mb": 1141.0
+    },
+    "5": {
+      "duration_sec": 12.3,
+      "requests_per_sec": 8.1,
+      "successful": 100,
+      "errors": 0,
+      "timeouts": 0,
+      "latency": {
+        "p50": 566.77,
+        "p95": 874.36,
+        "p99": 924.93,
+        "mean": 608.5,
+        "min": 411.61,
+        "max": 924.93
+      },
+      "rss_mb": 1149.0
+    },
+    "10": {
+      "duration_sec": 12.4,
+      "requests_per_sec": 8.1,
+      "successful": 100,
+      "errors": 0,
+      "timeouts": 0,
+      "latency": {
+        "p50": 1213.47,
+        "p95": 1429.81,
+        "p99": 1461.81,
+        "mean": 1195.9,
+        "min": 431.51,
+        "max": 1461.81
+      },
+      "rss_mb": 1149.0
+    },
+    "25": {
+      "duration_sec": 12.3,
+      "requests_per_sec": 8.1,
+      "successful": 100,
+      "errors": 0,
+      "timeouts": 0,
+      "latency": {
+        "p50": 3000.96,
+        "p95": 3208.72,
+        "p99": 3339.97,
+        "mean": 2738.81,
+        "min": 532.65,
+        "max": 3339.97
+      },
+      "rss_mb": 1150.0
+    },
+    "50": {
+      "duration_sec": 12.4,
+      "requests_per_sec": 8.0,
+      "successful": 100,
+      "errors": 0,
+      "timeouts": 0,
+      "latency": {
+        "p50": 6037.02,
+        "p95": 6239.84,
+        "p99": 6264.63,
+        "mean": 4752.71,
+        "min": 499.36,
+        "max": 6264.63
+      },
+      "rss_mb": 1150.0
+    }
+  }
+}

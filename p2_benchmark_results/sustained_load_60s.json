@@ -1,0 +1,66 @@
+[
+  {
+    "target_rps": 5,
+    "duration": 60,
+    "total_sent": 299,
+    "accepted": 299,
+    "rejected": 0,
+    "errors": 0,
+    "accept_rate": 100.0,
+    "reject_rate": 0.0,
+    "latency_ms": {
+      "p50": 165.7,
+      "p95": 627.5,
+      "p99": 850.6,
+      "avg": 237.4
+    }
+  },
+  {
+    "target_rps": 7,
+    "duration": 60,
+    "total_sent": 413,
+    "accepted": 345,
+    "rejected": 68,
+    "errors": 0,
+    "accept_rate": 83.5,
+    "reject_rate": 16.5,
+    "latency_ms": {
+      "p50": 797.2,
+      "p95": 1441.5,
+      "p99": 1645.3,
+      "avg": 732.6
+    }
+  },
+  {
+    "target_rps": 10,
+    "duration": 60,
+    "total_sent": 587,
+    "accepted": 320,
+    "rejected": 267,
+    "errors": 0,
+    "accept_rate": 54.5,
+    "reject_rate": 45.5,
+    "latency_ms": {
+      "p50": 744.4,
+      "p95": 1530.3,
+      "p99": 1884.2,
+      "avg": 589.3
+    }
+  },
+  {
+    "target_rps": 20,
+    "duration": 60,
+    "total_sent": 1169,
+    "accepted": 357,
+    "rejected": 812,
+    "errors": 0,
+    "accept_rate": 30.5,
+    "reject_rate": 69.5,
+    "latency_ms": {
+      "p50": 7.1,
+      "p95": 1247.2,
+      "p99": 1435.0,
+      "avg": 310.1
+    }
+  }
+]

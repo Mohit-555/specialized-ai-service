@@ -1,0 +1,483 @@
+{
+  "hardware": {
+    "cpu": "Intel(R) Core(TM) i5-7200U CPU @ 2.50GHz",
+    "cores": 2,
+    "threads": 4,
+    "ram_gb": 7.6,
+    "gpu": null
+  },
+  "software": {
+    "python": "3.12.3",
+    "torch": "2.13.0+cu130",
+    "transformers": "4.57.6"
+  },
+  "latency_breakdown": {
+    "short (5 words)": {
+      "intent_tokenize": {
+        "p50": 0.399,
+        "p95": 1.021,
+        "p99": 3.715,
+        "mean": 0.53,
+        "min": 0.298,
+        "max": 3.715
+      },
+      "intent_infer": {
+        "p50": 45.989,
+        "p95": 63.221,
+        "p99": 67.58,
+        "mean": 49.78,
+        "min": 37.782,
+        "max": 67.58
+      },
+      "esc_tokenize": {
+        "p50": 0.377,
+        "p95": 0.655,
+        "p99": 0.923,
+        "mean": 0.413,
+        "min": 0.3,
+        "max": 0.923
+      },
+      "esc_infer": {
+        "p50": 46.509,
+        "p95": 62.953,
+        "p99": 65.07,
+        "mean": 48.663,
+        "min": 34.765,
+        "max": 65.07
+      }
+    },
+    "normal (~60 words)": {
+      "intent_tokenize": {
+        "p50": 0.921,
+        "p95": 1.184,
+        "p99": 1.282,
+        "mean": 0.908,
+        "min": 0.592,
+        "max": 1.282
+      },
+      "intent_infer": {
+        "p50": 123.514,
+        "p95": 150.238,
+        "p99": 152.313,
+        "mean": 126.08,
+        "min": 101.031,
+        "max": 152.313
+      },
+      "esc_tokenize": {
+        "p50": 0.951,
+        "p95": 1.449,
+        "p99": 2.866,
+        "mean": 0.973,
+        "min": 0.582,
+        "max": 2.866
+      },
+      "esc_infer": {
+        "p50": 124.319,
+        "p95": 147.013,
+        "p99": 161.261,
+        "mean": 124.69,
+        "min": 97.82,
+        "max": 161.261
+      }
+    },
+    "long (500 words)": {
+      "intent_tokenize": {
+        "p50": 3.144,
+        "p95": 5.104,
+        "p99": 9.065,
+        "mean": 3.521,
+        "min": 2.113,
+        "max": 9.065
+      },
+      "intent_infer": {
+        "p50": 181.477,
+        "p95": 233.093,
+        "p99": 237.971,
+        "mean": 186.608,
+        "min": 155.71,
+        "max": 237.971
+      },
+      "esc_tokenize": {
+        "p50": 3.414,
+        "p95": 4.832,
+        "p99": 6.251,
+        "mean": 3.44,
+        "min": 2.372,
+        "max": 6.251
+      },
+      "esc_infer": {
+        "p50": 179.635,
+        "p95": 230.895,
+        "p99": 236.811,
+        "mean": 184.392,
+        "min": 152.099,
+        "max": 236.811
+      }
+    },
+    "near-max (4900 chars)": {
+      "intent_tokenize": {
+        "p50": 3.352,
+        "p95": 4.316,
+        "p99": 5.196,
+        "mean": 3.303,
+        "min": 2.271,
+        "max": 5.196
+      },
+      "intent_infer": {
+        "p50": 39.57,
+        "p95": 46.453,
+        "p99": 58.495,
+        "mean": 39.71,
+        "min": 31.557,
+        "max": 58.495
+      },
+      "esc_tokenize": {
+        "p50": 3.544,
+        "p95": 4.387,
+        "p99": 6.257,
+        "mean": 3.401,
+        "min": 2.24,
+        "max": 6.257
+      },
+      "esc_infer": {
+        "p50": 39.194,
+        "p95": 49.283,
+        "p99": 53.876,
+        "mean": 39.905,
+        "min": 31.432,
+        "max": 53.876
+      }
+    }
+  },
+  "http_latency": {
+    "p50": 240.079,
+    "p95": 307.014,
+    "p99": 314.002,
+    "mean": 246.115,
+    "min": 208.523,
+    "max": 314.002
+  },
+  "concurrency": {
+    "1": {
+      "duration_sec": 24.7,
+      "requests_per_sec": 4.0,
+      "successful": 100,
+      "errors": 0,
+      "timeouts": 0,
+      "latency": {
+        "p50": 238.876,
+        "p95": 303.057,
+        "p99": 406.37,
+        "mean": 246.947,
+        "min": 198.526,
+        "max": 406.37
+      },
+      "rss_mb": 1140.24609375
+    },
+    "5": {
+      "duration_sec": 24.5,
+      "requests_per_sec": 4.1,
+      "successful": 100,
+      "errors": 0,
+      "timeouts": 0,
+      "latency": {
+        "p50": 1213.316,
+        "p95": 1355.504,
+        "p99": 1422.525,
+        "mean": 1202.271,
+        "min": 320.229,
+        "max": 1422.525
+      },
+      "rss_mb": 1140.24609375
+    },
+    "10": {
+      "duration_sec": 24.1,
+      "requests_per_sec": 4.1,
+      "successful": 100,
+      "errors": 0,
+      "timeouts": 0,
+      "latency": {
+        "p50": 2386.168,
+        "p95": 2747.737,
+        "p99": 2849.987,
+        "mean": 2311.247,
+        "min": 271.773,
+        "max": 2849.987
+      },
+      "rss_mb": 1140.26171875
+    },
+    "25": {
+      "duration_sec": 24.9,
+      "requests_per_sec": 4.0,
+      "successful": 100,
+      "errors": 0,
+      "timeouts": 0,
+      "latency": {
+        "p50": 6053.421,
+        "p95": 6546.947,
+        "p99": 6597.078,
+        "mean": 5509.131,
+        "min": 302.191,
+        "max": 6597.078
+      },
+      "rss_mb": 1140.26171875
+    },
+    "50": {
+      "duration_sec": 24.8,
+      "requests_per_sec": 4.0,
+      "successful": 100,
+      "errors": 0,
+      "timeouts": 0,
+      "latency": {
+        "p50": 11867.454,
+        "p95": 12271.02,
+        "p99": 12473.913,
+        "mean": 9290.423,
+        "min": 279.41,
+        "max": 12473.913
+      },
+      "rss_mb": 1140.26171875
+    }
+  },
+  "memory": {
+    "rss_after_warmup_mb": 1140.0,
+    "rss_mean_during_load_mb": 1140.0,
+    "rss_max_during_load_mb": 1140.0,
+    "current_rss_mb": 1140.0,
+    "intent_params_mb": 255.0,
+    "esc_params_mb": 255.0
+  },
+  "error_handling": [
+    {
+      "test": "empty text",
+      "status": 422,
+      "body": {
+        "detail": [
+          {
+            "type": "string_too_short",
+            "loc": [
+              "body",
+              "text"
+            ],
+            "msg": "String should have at least 1 character",
+            "input": "",
+            "ctx": {
+              "min_length": 1
+            }
+          }
+        ]
+      },
+      "passed": true
+    },
+    {
+      "test": "whitespace-only",
+      "status": 422,
+      "body": {
+        "detail": [
+          {
+            "type": "value_error",
+            "loc": [
+              "body",
+              "text"
+            ],
+            "msg": "Value error, text must not be empty or whitespace only",
+            "input": "   ",
+            "ctx": {
+              "error": {}
+            }
+          }
+        ]
+      },
+      "passed": true
+    },
+    {
+      "test": "5000-char input",
+      "status": 200,
+      "body": {
+        "intent": "other",
+        "intent_confidence": 0.8232,
+        "escalation_required": false,
+        "escalation_confidence": 0.0174,
+        "model_version": {
+          "intent": "intent-v4-en",
+          "escalation": "escalation-v4-en"
+        },
+        "top_intents": [
+          {
+            "intent": "other",
+            "confidence": 0.8232
+          },
+          {
+            "intent": "complaint",
+            "confidence": 0.0378
+          },
+          {
+            "intent": "general_question",
+            "confidence": 0.0336
+          }
+        ]
+      },
+      "passed": true
+    },
+    {
+      "test": ">5000-char input",
+      "status": 422,
+      "body": {
+        "detail": [
+          {
+            "type": "string_too_long",
+            "loc": [
+              "body",
+              "text"
+            ],
+            "msg": "String should have at most 5000 characters",
+            "input": "BBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBB",
+            "ctx": {
+              "max_length": 5000
+            }
+          }
+        ]
+      },
+      "passed": true
+    },
+    {
+      "test": "unicode (Hindi)",
+      "status": 200,
+      "body": {
+        "intent": "other",
+        "intent_confidence": 0.4149,
+        "escalation_required": false,
+        "escalation_confidence": 0.0214,
+        "model_version": {
+          "intent": "intent-v4-en",
+          "escalation": "escalation-v4-en"
+        },
+        "top_intents": [
+          {
+            "intent": "other",
+            "confidence": 0.4149
+          },
+          {
+            "intent": "general_question",
+            "confidence": 0.1558
+          },
+          {
+            "intent": "product_question",
+            "confidence": 0.0855
+          }
+        ]
+      },
+      "passed": true
+    },
+    {
+      "test": "emoji",
+      "status": 200,
+      "body": {
+        "intent": "other",
+        "intent_confidence": 0.8319,
+        "escalation_required": false,
+        "escalation_confidence": 0.0147,
+        "model_version": {
+          "intent": "intent-v4-en",
+          "escalation": "escalation-v4-en"
+        },
+        "top_intents": [
+          {
+            "intent": "other",
+            "confidence": 0.8319
+          },
+          {
+            "intent": "general_question",
+            "confidence": 0.038
+          },
+          {
+            "intent": "complaint",
+            "confidence": 0.0364
+          }
+        ]
+      },
+      "passed": true
+    },
+    {
+      "test": "newline-heavy",
+      "status": 200,
+      "body": {
+        "intent": "other",
+        "intent_confidence": 0.8375,
+        "escalation_required": false,
+        "escalation_confidence": 0.0152,
+        "model_version": {
+          "intent": "intent-v4-en",
+          "escalation": "escalation-v4-en"
+        },
+        "top_intents": [
+          {
+            "intent": "other",
+            "confidence": 0.8375
+          },
+          {
+            "intent": "general_question",
+            "confidence": 0.0388
+          },
+          {
+            "intent": "complaint",
+            "confidence": 0.0243
+          }
+        ]
+      },
+      "passed": true
+    },
+    {
+      "test": "text=null",
+      "status": 422,
+      "body": {
+        "detail": [
+          {
+            "type": "string_type",
+            "loc": [
+              "body",
+              "text"
+            ],
+            "msg": "Input should be a valid string",
+            "input": null
+          }
+        ]
+      },
+      "passed": true
+    },
+    {
+      "test": "missing text",
+      "status": 422,
+      "body": {
+        "detail": [
+          {
+            "type": "missing",
+            "loc": [
+              "body"
+            ],
+            "msg": "Field required",
+            "input": null
+          }
+        ]
+      },
+      "passed": true
+    },
+    {
+      "test": "wrong content type",
+      "status": 422,
+      "body": {
+        "detail": [
+          {
+            "type": "missing",
+            "loc": [
+              "body"
+            ],
+            "msg": "Field required",
+            "input": null
+          }
+        ]
+      },
+      "passed": true
+    }
+  ]
+}

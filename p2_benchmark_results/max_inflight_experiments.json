@@ -1,0 +1,149 @@
+[
+  {
+    "max_inflight": 4,
+    "arrival_results": [
+      {
+        "target_rps": 5,
+        "duration": 15,
+        "total_sent": 75,
+        "accepted": 75,
+        "rejected": 0,
+        "errors": 0,
+        "accept_rate": 100.0,
+        "reject_rate": 0.0
+      },
+      {
+        "target_rps": 7,
+        "duration": 15,
+        "total_sent": 105,
+        "accepted": 104,
+        "rejected": 1,
+        "errors": 0,
+        "accept_rate": 99.0,
+        "reject_rate": 1.0
+      },
+      {
+        "target_rps": 10,
+        "duration": 15,
+        "total_sent": 150,
+        "accepted": 111,
+        "rejected": 39,
+        "errors": 0,
+        "accept_rate": 74.0,
+        "reject_rate": 26.0
+      },
+      {
+        "target_rps": 20,
+        "duration": 15,
+        "total_sent": 296,
+        "accepted": 106,
+        "rejected": 190,
+        "errors": 0,
+        "accept_rate": 35.8,
+        "reject_rate": 64.2
+      }
+    ],
+    "health_latency_ms": {
+      "count": 146,
+      "p50": 1.6
+    }
+  },
+  {
+    "max_inflight": 6,
+    "arrival_results": [
+      {
+        "target_rps": 5,
+        "duration": 15,
+        "total_sent": 75,
+        "accepted": 75,
+        "rejected": 0,
+        "errors": 0,
+        "accept_rate": 100.0,
+        "reject_rate": 0.0
+      },
+      {
+        "target_rps": 7,
+        "duration": 15,
+        "total_sent": 105,
+        "accepted": 105,
+        "rejected": 0,
+        "errors": 0,
+        "accept_rate": 100.0,
+        "reject_rate": 0.0
+      },
+      {
+        "target_rps": 10,
+        "duration": 15,
+        "total_sent": 149,
+        "accepted": 114,
+        "rejected": 35,
+        "errors": 0,
+        "accept_rate": 76.5,
+        "reject_rate": 23.5
+      },
+      {
+        "target_rps": 20,
+        "duration": 15,
+        "total_sent": 296,
+        "accepted": 97,
+        "rejected": 199,
+        "errors": 0,
+        "accept_rate": 32.8,
+        "reject_rate": 67.2
+      }
+    ],
+    "health_latency_ms": {
+      "count": 148,
+      "p50": 1.3
+    }
+  },
+  {
+    "max_inflight": 10,
+    "arrival_results": [
+      {
+        "target_rps": 5,
+        "duration": 15,
+        "total_sent": 75,
+        "accepted": 65,
+        "rejected": 10,
+        "errors": 0,
+        "accept_rate": 86.7,
+        "reject_rate": 13.3
+      },
+      {
+        "target_rps": 7,
+        "duration": 15,
+        "total_sent": 104,
+        "accepted": 66,
+        "rejected": 38,
+        "errors": 0,
+        "accept_rate": 63.5,
+        "reject_rate": 36.5
+      },
+      {
+        "target_rps": 10,
+        "duration": 15,
+        "total_sent": 147,
+        "accepted": 73,
+        "rejected": 74,
+        "errors": 0,
+        "accept_rate": 49.7,
+        "reject_rate": 50.3
+      },
+      {
+        "target_rps": 20,
+        "duration": 15,
+        "total_sent": 288,
+        "accepted": 69,
+        "rejected": 219,
+        "errors": 0,
+        "accept_rate": 24.0,
+        "reject_rate": 76.0
+      }
+    ],
+    "health_latency_ms": {
+      "count": 146,
+      "p50": 1.6
+    }
+  }
+]

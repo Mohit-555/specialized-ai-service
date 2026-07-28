@@ -1,0 +1,502 @@
+[
+  {
+    "id": 1,
+    "text": "What is the price of your basic plan?",
+    "expected_intent": "pricing",
+    "acceptable_intents": null,
+    "expected_escalation": false,
+    "tags": ["english", "pricing"],
+    "known_failure": false,
+    "failure_reason": null
+  },
+  {
+    "id": 2,
+    "text": "I want a refund for my last payment.",
+    "expected_intent": "refund",
+    "acceptable_intents": null,
+    "expected_escalation": true,
+    "tags": ["english", "refund"],
+    "known_failure": false,
+    "failure_reason": null
+  },
+  {
+    "id": 3,
+    "text": "The dashboard keeps loading and nothing appears.",
+    "expected_intent": "technical_support",
+    "acceptable_intents": null,
+    "expected_escalation": false,
+    "tags": ["english", "technical_support"],
+    "known_failure": false,
+    "failure_reason": null
+  },
+  {
+    "id": 4,
+    "text": "Please connect me with a human agent.",
+    "expected_intent": "human_request",
+    "acceptable_intents": null,
+    "expected_escalation": true,
+    "tags": ["english", "human_request"],
+    "known_failure": false,
+    "failure_reason": null
+  },
+  {
+    "id": 5,
+    "text": "I can't log into my account. It keeps saying invalid password.",
+    "expected_intent": "account_issue",
+    "acceptable_intents": ["technical_support"],
+    "expected_escalation": false,
+    "tags": ["english", "account_issue"],
+    "known_failure": false,
+    "failure_reason": null
+  },
+  {
+    "id": 6,
+    "text": "Your product is terrible. I want to speak to a manager immediately.",
+    "expected_intent": "complaint",
+    "acceptable_intents": ["human_request"],
+    "expected_escalation": true,
+    "tags": ["english", "complaint", "human_request"],
+    "known_failure": false,
+    "failure_reason": null
+  },
+  {
+    "id": 7,
+    "text": "I want to upgrade to the premium plan. What are the benefits?",
+    "expected_intent": "sales",
+    "acceptable_intents": ["pricing"],
+    "expected_escalation": false,
+    "tags": ["english", "sales", "pricing"],
+    "known_failure": false,
+    "failure_reason": null
+  },
+  {
+    "id": 8,
+    "text": "How do I reset my password?",
+    "expected_intent": "general_question",
+    "acceptable_intents": ["technical_support"],
+    "expected_escalation": false,
+    "tags": ["english", "general_question"],
+    "known_failure": false,
+    "failure_reason": null
+  },
+  {
+    "id": 9,
+    "text": "I need help understanding how your integration works with Shopify.",
+    "expected_intent": "product_question",
+    "acceptable_intents": ["general_question"],
+    "expected_escalation": false,
+    "tags": ["english", "product_question"],
+    "known_failure": false,
+    "failure_reason": null
+  },
+  {
+    "id": 10,
+    "text": "Just browsing, no specific question.",
+    "expected_intent": "other",
+    "acceptable_intents": null,
+    "expected_escalation": false,
+    "tags": ["english", "other"],
+    "known_failure": false,
+    "failure_reason": null
+  },
+  {
+    "id": 11,
+    "text": "I don't need a refund. I just want to understand why I was charged.",
+    "expected_intent": "general_question",
+    "acceptable_intents": ["pricing"],
+    "expected_escalation": false,
+    "tags": ["english", "negation", "refund"],
+    "known_failure": true,
+    "failure_reason": "high-confidence refund prediction despite explicit negation"
+  },
+  {
+    "id": 12,
+    "text": "Payment kat gaya lekin order confirm nahi hua.",
+    "expected_intent": "technical_support",
+    "acceptable_intents": ["account_issue", "refund"],
+    "expected_escalation": true,
+    "tags": ["hinglish", "multi_intent"],
+    "known_failure": true,
+    "failure_reason": "taxonomy/model ambiguity across intent boundaries"
+  },
+  {
+    "id": 13,
+    "text": "Bhai 2 din se login nahi ho raha, please help karo.",
+    "expected_intent": "technical_support",
+    "acceptable_intents": ["account_issue"],
+    "expected_escalation": false,
+    "tags": ["hinglish", "technical_support"],
+    "known_failure": true,
+    "failure_reason": "human_request over-trigger for help requests in Hinglish"
+  },
+  {
+    "id": 14,
+    "text": "Payment deduct hua tha but ab refund mil gaya, no issue.",
+    "expected_intent": "general_question",
+    "acceptable_intents": ["other"],
+    "expected_escalation": false,
+    "tags": ["hinglish", "resolution_state"],
+    "known_failure": true,
+    "failure_reason": "serious escalation failure: resolved issue flagged for escalation"
+  },
+  {
+    "id": 15,
+    "text": "App bahut slow hai yaar but abhi urgent nahi hai.",
+    "expected_intent": "technical_support",
+    "acceptable_intents": ["complaint"],
+    "expected_escalation": false,
+    "tags": ["hinglish", "negation"],
+    "known_failure": true,
+    "failure_reason": "escalation over-trigger despite explicit 'not urgent' signal"
+  },
+  {
+    "id": 16,
+    "text": "Nobody needs to contact me. I'm only leaving feedback that the new dashboard is much better.",
+    "expected_intent": "general_question",
+    "acceptable_intents": ["other"],
+    "expected_escalation": false,
+    "tags": ["english", "negation", "feedback"],
+    "known_failure": true,
+    "failure_reason": "complaint misclassification of positive feedback / taxonomy weakness"
+  },
+  {
+    "id": 17,
+    "text": "Mujhe refund chahiye aur account bhi close karna hai.",
+    "expected_intent": "refund",
+    "acceptable_intents": ["account_issue"],
+    "expected_escalation": true,
+    "tags": ["hinglish", "multi_intent", "refund"],
+    "known_failure": false,
+    "failure_reason": null
+  },
+  {
+    "id": 18,
+    "text": "I was upset but I don't need anyone to reach out.",
+    "expected_intent": "complaint",
+    "acceptable_intents": ["general_question", "other"],
+    "expected_escalation": false,
+    "tags": ["english", "hard_negative_escalation", "negation"],
+    "known_failure": false,
+    "failure_reason": null
+  },
+  {
+    "id": 19,
+    "text": "Too expensive",
+    "expected_intent": "pricing",
+    "acceptable_intents": ["complaint"],
+    "expected_escalation": false,
+    "tags": ["english", "pricing"],
+    "known_failure": false,
+    "failure_reason": null
+  },
+  {
+    "id": 20,
+    "text": "Refund nahi chahiye mujhe. Service do sahi se.",
+    "expected_intent": "technical_support",
+    "acceptable_intents": ["complaint"],
+    "expected_escalation": true,
+    "tags": ["hinglish", "negation", "technical_support"],
+    "known_failure": true,
+    "failure_reason": "high-confidence refund despite explicit negation in Hinglish"
+  },
+  {
+    "id": 21,
+    "text": "I expressly forbid any escalation of this matter.",
+    "expected_intent": "general_question",
+    "acceptable_intents": ["complaint", "other"],
+    "expected_escalation": false,
+    "tags": ["english", "negation", "hard_negative_escalation"],
+    "known_failure": true,
+    "failure_reason": "model escalates despite explicit 'forbid any escalation' — hard_negative_escalation blind spot"
+  },
+  {
+    "id": 22,
+    "text": "Do not process any changes to my account.",
+    "expected_intent": "account_issue",
+    "acceptable_intents": ["general_question"],
+    "expected_escalation": false,
+    "tags": ["english", "negation"],
+    "known_failure": false,
+    "failure_reason": null
+  },
+  {
+    "id": 23,
+    "text": "Please don't cancel my account. I want to keep it.",
+    "expected_intent": "general_question",
+    "acceptable_intents": ["account_issue"],
+    "expected_escalation": false,
+    "tags": ["english", "negation"],
+    "known_failure": false,
+    "failure_reason": null
+  },
+  {
+    "id": 24,
+    "text": "Mujhe koi call nahi chahiye. Bas email karo.",
+    "expected_intent": "general_question",
+    "acceptable_intents": ["other"],
+    "expected_escalation": false,
+    "tags": ["hinglish", "negation"],
+    "known_failure": true,
+    "failure_reason": "human_request over-trigger despite explicit 'no call' negation in Hinglish"
+  },
+  {
+    "id": 25,
+    "text": "Not a complaint. Just an observation.",
+    "expected_intent": "other",
+    "acceptable_intents": ["general_question"],
+    "expected_escalation": false,
+    "tags": ["english", "negation"],
+    "known_failure": false,
+    "failure_reason": null
+  },
+  {
+    "id": 26,
+    "text": "Please do not process any refund. I was mistaken.",
+    "expected_intent": "general_question",
+    "acceptable_intents": ["pricing"],
+    "expected_escalation": false,
+    "tags": ["english", "negation"],
+    "known_failure": true,
+    "failure_reason": "refund intent triggered despite explicit refund negation"
+  },
+  {
+    "id": 27,
+    "text": "No refund needed. Just wanted to provide feedback.",
+    "expected_intent": "other",
+    "acceptable_intents": ["general_question"],
+    "expected_escalation": false,
+    "tags": ["english", "negation", "feedback"],
+    "known_failure": true,
+    "failure_reason": "over-classified as complaint or refund despite positive/neutral feedback"
+  },
+  {
+    "id": 28,
+    "text": "I don't want to talk to a manager. You're fine.",
+    "expected_intent": "general_question",
+    "acceptable_intents": ["other"],
+    "expected_escalation": false,
+    "tags": ["english", "negation", "hard_negative_escalation"],
+    "known_failure": true,
+    "failure_reason": "complaint misclassification of explicit 'don't want to talk, you're fine' — negation blind spot"
+  },
+  {
+    "id": 29,
+    "text": "I love your platform but I need help understanding the features.",
+    "expected_intent": "product_question",
+    "acceptable_intents": ["general_question"],
+    "expected_escalation": false,
+    "tags": ["english", "multi_intent"],
+    "known_failure": true,
+    "failure_reason": "classified as 'other' instead of product_question — misses 'help understanding features' signal"
+  },
+  {
+    "id": 30,
+    "text": "I'm both interested in buying and angry about my current plan.",
+    "expected_intent": "sales",
+    "acceptable_intents": ["complaint", "pricing"],
+    "expected_escalation": false,
+    "tags": ["english", "multi_intent"],
+    "known_failure": false,
+    "failure_reason": null
+  },
+  {
+    "id": 31,
+    "text": "Sales team se baat karni hai aur price bhi confirm karna hai.",
+    "expected_intent": "sales",
+    "acceptable_intents": ["pricing"],
+    "expected_escalation": false,
+    "tags": ["hinglish", "multi_intent"],
+    "known_failure": false,
+    "failure_reason": null
+  },
+  {
+    "id": 32,
+    "text": "Technical issue causing me to want a refund.",
+    "expected_intent": "refund",
+    "acceptable_intents": ["technical_support"],
+    "expected_escalation": true,
+    "tags": ["english", "multi_intent"],
+    "known_failure": false,
+    "failure_reason": null
+  },
+  {
+    "id": 33,
+    "text": "I have a technical issue and I want to complain about it.",
+    "expected_intent": "technical_support",
+    "acceptable_intents": ["complaint"],
+    "expected_escalation": false,
+    "tags": ["english", "multi_intent"],
+    "known_failure": false,
+    "failure_reason": null
+  },
+  {
+    "id": 34,
+    "text": "Need technical help and want to speak to manager.",
+    "expected_intent": "technical_support",
+    "acceptable_intents": ["human_request"],
+    "expected_escalation": true,
+    "tags": ["english", "multi_intent"],
+    "known_failure": true,
+    "failure_reason": "escalation false negative: 'want to speak to manager' should trigger escalation but does not"
+  },
+  {
+    "id": 35,
+    "text": "Let me talk to a manager. This is the third time I'm calling.",
+    "expected_intent": "human_request",
+    "acceptable_intents": ["complaint"],
+    "expected_escalation": true,
+    "tags": ["english", "human_request"],
+    "known_failure": false,
+    "failure_reason": null
+  },
+  {
+    "id": 36,
+    "text": "I'll take legal action if I don't get my money back.",
+    "expected_intent": "refund",
+    "acceptable_intents": ["complaint"],
+    "expected_escalation": true,
+    "tags": ["english", "refund", "complaint"],
+    "known_failure": false,
+    "failure_reason": null
+  },
+  {
+    "id": 37,
+    "text": "Your product is good but your support is terrible.",
+    "expected_intent": "complaint",
+    "acceptable_intents": ["general_question"],
+    "expected_escalation": false,
+    "tags": ["english", "multi_intent"],
+    "known_failure": false,
+    "failure_reason": null
+  },
+  {
+    "id": 38,
+    "text": "My payment failed yesterday but it's working now.",
+    "expected_intent": "technical_support",
+    "acceptable_intents": ["general_question"],
+    "expected_escalation": false,
+    "tags": ["english", "resolution_state"],
+    "known_failure": true,
+    "failure_reason": "intent classified as account_issue and escalation false positive: model misses 'resolved' signal"
+  },
+  {
+    "id": 39,
+    "text": "Can you tell me what features are included in the enterprise plan?",
+    "expected_intent": "pricing",
+    "acceptable_intents": ["product_question", "sales", "general_question"],
+    "expected_escalation": false,
+    "tags": ["english", "pricing"],
+    "known_failure": false,
+    "failure_reason": null
+  },
+  {
+    "id": 40,
+    "text": "My account was hacked. Someone changed my email.",
+    "expected_intent": "account_issue",
+    "acceptable_intents": ["technical_support"],
+    "expected_escalation": true,
+    "tags": ["english", "account_issue"],
+    "known_failure": false,
+    "failure_reason": null
+  },
+  {
+    "id": 41,
+    "text": "I want to cancel my subscription immediately.",
+    "expected_intent": "account_issue",
+    "acceptable_intents": ["refund"],
+    "expected_escalation": false,
+    "tags": ["english", "account_issue"],
+    "known_failure": true,
+    "failure_reason": "classified as 'sales' instead of account_issue — misses explicit cancellation request"
+  },
+  {
+    "id": 42,
+    "text": "Mera account delete karne ke baad bhi charge aa raha hai.",
+    "expected_intent": "refund",
+    "acceptable_intents": ["account_issue", "complaint"],
+    "expected_escalation": true,
+    "tags": ["hinglish", "refund", "account_issue"],
+    "known_failure": true,
+    "failure_reason": "account_issue/refund boundary ambiguity in Hinglish"
+  },
+  {
+    "id": 43,
+    "text": "What happens if I exceed my plan limit?",
+    "expected_intent": "pricing",
+    "acceptable_intents": ["general_question", "product_question"],
+    "expected_escalation": false,
+    "tags": ["english", "pricing"],
+    "known_failure": false,
+    "failure_reason": null
+  },
+  {
+    "id": 44,
+    "text": "I need someone to call me. This is urgent.",
+    "expected_intent": "human_request",
+    "acceptable_intents": null,
+    "expected_escalation": true,
+    "tags": ["english", "human_request"],
+    "known_failure": false,
+    "failure_reason": null
+  },
+  {
+    "id": 45,
+    "text": "refund chahiye mera paisa wapas karo",
+    "expected_intent": "refund",
+    "acceptable_intents": null,
+    "expected_escalation": true,
+    "tags": ["hinglish", "refund"],
+    "known_failure": false,
+    "failure_reason": null
+  },
+  {
+    "id": 46,
+    "text": "Bahut din ho gaye. Koi response nahi aa raha.",
+    "expected_intent": "complaint",
+    "acceptable_intents": ["general_question", "technical_support"],
+    "expected_escalation": true,
+    "tags": ["hinglish", "complaint"],
+    "known_failure": true,
+    "failure_reason": "escalation false negative: ignored complaint about no response in Hinglish"
+  },
+  {
+    "id": 47,
+    "text": "Mujhe aapke service ka refund chahiye service achhi nahi hai",
+    "expected_intent": "refund",
+    "acceptable_intents": ["complaint"],
+    "expected_escalation": true,
+    "tags": ["hinglish", "multi_intent", "refund"],
+    "known_failure": false,
+    "failure_reason": null
+  },
+  {
+    "id": 48,
+    "text": "What are your business hours?",
+    "expected_intent": "general_question",
+    "acceptable_intents": null,
+    "expected_escalation": false,
+    "tags": ["english", "general_question"],
+    "known_failure": false,
+    "failure_reason": null
+  },
+  {
+    "id": 49,
+    "text": "I want to buy the pro version. Can you give me a discount?",
+    "expected_intent": "sales",
+    "acceptable_intents": ["pricing"],
+    "expected_escalation": false,
+    "tags": ["english", "sales"],
+    "known_failure": false,
+    "failure_reason": null
+  },
+  {
+    "id": 50,
+    "text": "Your website keeps crashing on mobile. Fix it please.",
+    "expected_intent": "technical_support",
+    "acceptable_intents": ["complaint"],
+    "expected_escalation": false,
+    "tags": ["english", "technical_support"],
+    "known_failure": false,
+    "failure_reason": null
+  }
+]
